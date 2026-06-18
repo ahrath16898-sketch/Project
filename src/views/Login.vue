@@ -101,7 +101,7 @@
             <button
               type="submit"
               :disabled="isLoading"
-              class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-white bg-gradient hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-blackgit bg-gradient hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Loader2 v-if="isLoading" class="animate-spin mr-2 h-5 w-5" />
               <span v-else>ចូលគណនី</span>
