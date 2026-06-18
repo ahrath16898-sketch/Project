@@ -1,162 +1,213 @@
 <template>
-  <nav class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <router-link to="/" class="group">
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 
-                       tracking-tight group-hover:text-gray-600 transition-colors duration-300">
-              DASTORE
-            </h1>
-          </router-link>
-        </div>
+      <div class="flex justify-between items-center h-16">
+        <RouterLink to="/home" class="flex items-center gap-2 hover:opacity-80 transition">
+          <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+            <Sprout class="h-6 w-6 text-white" />
+          </div>
+          <span class="text-xl font-bold text-gray-800">DASTORE</span>
+        </RouterLink>
 
-        <!-- Desktop Navigation Links -->
-        <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
-          <router-link 
+        <div class="hidden md:flex items-center gap-8">
+          <RouterLink 
             to="/home" 
-            class="flex items-center gap-2 px-3 py-2 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-            :class="{ 'text-gray-900 bg-gray-100': $route.path === '/' || $route.path === '/home' }">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
-            Home
-          </router-link>
-          
-          <router-link 
+            class="text-gray-600 hover:text-green-600 transition font-medium"
+            active-class="text-green-600"
+          >
+            ផ្ទះ
+          </RouterLink>
+          <RouterLink 
             to="/shop" 
-            class="flex items-center gap-2 px-3 py-2 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-            :class="{ 'text-gray-900 bg-gray-100': $route.path === '/shop' }">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-            </svg>
-            Shop
-          </router-link>
-          
-          <router-link 
+            class="text-gray-600 hover:text-green-600 transition font-medium"
+            active-class="text-green-600"
+          >
+            ហាង
+          </RouterLink>
+          <RouterLink 
             to="/about" 
-            class="flex items-center gap-2 px-3 py-2 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-            :class="{ 'text-gray-900 bg-gray-100': $route.path === '/about' }">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            About
-          </router-link>
-          
-          <router-link 
+            class="text-gray-600 hover:text-green-600 transition font-medium"
+            active-class="text-green-600"
+          >
+            អំពីយើង
+          </RouterLink>
+          <RouterLink 
             to="/contact" 
-            class="flex items-center gap-2 px-3 py-2 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-            :class="{ 'text-gray-900 bg-gray-100': $route.path === '/contact' }">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            Contact
-          </router-link>
+            class="text-gray-600 hover:text-green-600 transition font-medium"
+            active-class="text-green-600"
+          >
+            ទំនាក់ទំនង
+          </RouterLink>
         </div>
 
-        <!-- Right Side Icons -->
-        <div class="flex items-center space-x-2 sm:space-x-3">
-          <!-- Search Button -->
-          <button class="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </button>
-          
-          <!-- Cart Button with Badge -->
-          <button class="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300 relative">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6M17 13l1.5 6M9 21h6M12 21v-6"/>
-            </svg>
-            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full 
-                         h-5 w-5 flex items-center justify-center shadow-lg">
-              0
-            </span>
+        <div class="flex items-center gap-3">
+          <div v-if="isAuthenticated" class="hidden md:flex items-center gap-3">
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+              <span class="text-green-600 font-semibold text-sm">{{ userInitial }}</span>
+            </div>
+            <span class="text-gray-700 font-medium">{{ userName }}</span>
+          </div>
+
+          <div v-if="!isAuthenticated" class="hidden md:flex items-center gap-2">
+            <RouterLink to="/login">
+              <button class="px-5 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition font-medium text-sm">
+                ចូលគណនី
+              </button>
+            </RouterLink>
+            <RouterLink to="/register">
+              <button class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium text-sm shadow-sm hover:shadow">
+                ចុះឈ្មោះ
+              </button>
+            </RouterLink>
+          </div>
+
+          <button 
+            v-if="isAuthenticated"
+            @click="handleLogout" 
+            class="hidden md:flex items-center gap-2 px-4 py-2 text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition font-medium text-sm"
+          >
+            <LogOut class="h-4 w-4" />
+            ចាកចេញ
           </button>
 
-          <!-- Mobile Menu Button -->
           <button 
             @click="toggleMobileMenu" 
-            class="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300"
-            aria-label="Menu">
-            <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
+            class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          >
+            <Menu v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-600" />
+            <X v-else class="h-6 w-6 text-gray-600" />
           </button>
         </div>
       </div>
-    </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div v-if="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 shadow-lg">
-      <div class="px-4 pt-2 pb-3 space-y-1">
-        <router-link 
-          to="/" 
-          class="flex items-center gap-3 px-4 py-3 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-          @click="closeMobileMenu">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-          </svg>
-          Home
-        </router-link>
-        
-        <router-link 
-          to="/shop" 
-          class="flex items-center gap-3 px-4 py-3 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-          @click="closeMobileMenu">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-          </svg>
-          Shop
-        </router-link>
-        
-        <router-link 
-          to="/about" 
-          class="flex items-center gap-3 px-4 py-3 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-          @click="closeMobileMenu">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          About
-        </router-link>
-        
-        <router-link 
-          to="/contact" 
-          class="flex items-center gap-3 px-4 py-3 text-gray-600 font-semibold rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-100"
-          @click="closeMobileMenu">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          Contact
-        </router-link>
-      </div>
+      <transition 
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0 -translate-y-4"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-4"
+      >
+        <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-100">
+          <div class="flex flex-col space-y-1">
+            <RouterLink 
+              to="/home" 
+              class="px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition"
+              @click="mobileMenuOpen = false"
+            >
+              ផ្ទះ
+            </RouterLink>
+            <RouterLink 
+              to="/shop" 
+              class="px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition"
+              @click="mobileMenuOpen = false"
+            >
+              ហាង
+            </RouterLink>
+            <RouterLink 
+              to="/about" 
+              class="px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition"
+              @click="mobileMenuOpen = false"
+            >
+              អំពីយើង
+            </RouterLink>
+            <RouterLink 
+              to="/contact" 
+              class="px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition"
+              @click="mobileMenuOpen = false"
+            >
+              ទំនាក់ទំនង
+            </RouterLink>
+
+            <div class="border-t border-gray-100 my-2"></div>
+
+            <div v-if="!isAuthenticated" class="px-4 space-y-2">
+              <RouterLink to="/login" @click="mobileMenuOpen = false">
+                <button class="w-full px-4 py-2.5 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition font-medium">
+                  ចូលគណនី
+                </button>
+              </RouterLink>
+              <RouterLink to="/register" @click="mobileMenuOpen = false">
+                <button class="w-full px-4 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium">
+                  ចុះឈ្មោះ
+                </button>
+              </RouterLink>
+            </div>
+
+            <div v-else class="px-4 space-y-2">
+              <div class="flex items-center gap-3 px-4 py-2 bg-green-50 rounded-lg">
+                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                  <span class="text-white font-semibold text-sm">{{ userInitial }}</span>
+                </div>
+                <span class="text-gray-700 font-medium">{{ userName }}</span>
+              </div>
+              <button 
+                @click="handleLogout" 
+                class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition font-medium"
+              >
+                <LogOut class="h-4 w-4" />
+                ចាកចេញ
+              </button>
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
   </nav>
-  
-  <RouterView />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { Sprout, Menu, X, LogOut } from 'lucide-vue-next'
 
+const router = useRouter()
 const mobileMenuOpen = ref(false)
+const user = ref(null)
+
+const isAuthenticated = computed(() => {
+  return localStorage.getItem('user') !== null
+})
+
+const userName = computed(() => {
+  if (user.value) {
+    return user.value.name || 'អ្នកប្រើប្រាស់'
+  }
+  return 'អ្នកប្រើប្រាស់'
+})
+
+const userInitial = computed(() => {
+  if (user.value && user.value.name) {
+    return user.value.name.charAt(0).toUpperCase()
+  }
+  return 'U'
+})
+
+onMounted(() => {
+  const userData = localStorage.getItem('user')
+  if (userData) {
+    user.value = JSON.parse(userData)
+  }
+})
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
 }
 
-const closeMobileMenu = () => {
+const handleLogout = () => {
+  localStorage.removeItem('user')
+  user.value = null
   mobileMenuOpen.value = false
+  router.push('/home')
 }
 </script>
+
+<style scoped>
+.router-link-active {
+  color: #16a34a;
+}
+
+.transition {
+  transition: all 0.2s ease;
+}
+</style>

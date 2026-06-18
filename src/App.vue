@@ -1,15 +1,12 @@
 <template>
   <div>
-    <Navbar></Navbar>
+    <Navbar />
+    <div class="pt-6">
+      <RouterView />
+    </div>
   </div>
 </template>
 
 <script setup>
-import Navbar from './components/Navbar.vue';
-
-
+import Navbar from '@/components/Navbar.vue'
 </script>
-
-<style scoped>
-
-</style>
