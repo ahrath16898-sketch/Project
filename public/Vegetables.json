@@ -598,7 +598,7 @@
     {
       "id": 86,
       "name": "ពោតកាក",
-      "category": "ឡ្រឿងទេស",
+      "category": "គ្រឿងទេស",
       "price": 1000,
       "image": "https://i.pinimg.com/736x/fe/67/3d/fe673df2000818e2eb00a8e899fcc071.jpg"
     },
@@ -696,7 +696,7 @@
     {
       "id": 101,
       "name": "ត្រសក់ស្រូវ",
-      "categor1y": "បន្លែផ្លែ",
+      "category": "បន្លែផ្លែ",
       "price":4000,
       "image": "https://i.pinimg.com/736x/51/42/69/514269f9e5667848857efd9e9a26e8a6.jpg"
     },
